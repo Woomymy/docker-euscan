@@ -5,7 +5,7 @@ COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
 
 RUN echo "app-portage/euscan-ng" > /etc/portage/package.accept_keywords
-COPY src-prepare-repo.conf /etc/portage/repos.conf/
+COPY woomy-overlay.conf /etc/portage/repos.conf/
 RUN emerge "dev-vcs/git"
 RUN emerge --sync
 RUN emerge app-portage/euscan-ng gentoolkit
